@@ -26,7 +26,6 @@ public class OrderController {
 	public Order findOrders(HttpServletRequest request, HttpServletResponse response,
 			@RequestBody Order order) throws Exception {
 		
-		/*주문처리*/
 		try {
 			order = orderService.save(order);
 		} catch (Exception e) {
