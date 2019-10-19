@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: 결제서비스
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: pncrm
+Implementation-Vendor-Id: com.roopy
+Build-Jdk: 1.8.0_152
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-msa-with-resttemplate/payment-service
+Created-By: Maven Integration for Eclipse
+
