@@ -22,7 +22,7 @@ public class PaymentController {
 	private IPaymentService paymentService;
 
 	@RequestMapping(value = "/payment", method = RequestMethod.POST)
-	public List<Payment> findOrders(HttpServletRequest request, HttpServletResponse response,
+	public List<Payment> save(HttpServletRequest request, HttpServletResponse response,
 			@RequestBody Order order) throws Exception {
 		
 		return paymentService.save(order);

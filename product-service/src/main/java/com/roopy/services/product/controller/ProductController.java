@@ -22,7 +22,7 @@ public class ProductController {
 	private IProductService productService;
 
 	@RequestMapping(value = "/product", method = RequestMethod.POST)
-	public List<OrderDetail> findOrders(HttpServletRequest request, HttpServletResponse response,
+	public List<OrderDetail> save(HttpServletRequest request, HttpServletResponse response,
 			@RequestBody Order order) throws Exception {
 		
 		/*상품수량업데이트*/
