@@ -23,7 +23,7 @@ public class OrderController {
 	private IOrderService orderService;
 
 	@RequestMapping(value = "/order", method = RequestMethod.POST)
-	public Order findOrders(HttpServletRequest request, HttpServletResponse response,
+	public Order save(HttpServletRequest request, HttpServletResponse response,
 			@RequestBody Order order) throws Exception {
 		
 		try {
