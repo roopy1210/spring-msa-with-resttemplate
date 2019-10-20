@@ -1,11 +1,14 @@
 package com.roopy.services.product.service.impl;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.roopy.services.product.domain.Order;
+import com.roopy.services.product.domain.OrderDetail;
 import com.roopy.services.product.domain.Product;
 import com.roopy.services.product.repository.ProductRepository;
 import com.roopy.services.product.service.IProductService;
@@ -18,7 +21,7 @@ public class ProductServiceImpl implements IProductService {
 	
 	@Transactional
 	@Override
-	public Order save(Order order) {
+	public List<OrderDetail> save(Order order) {
 
 		if (null != order.getOrderDetails() && order.getOrderDetails().size() > 0) {
 			
@@ -35,7 +38,7 @@ public class ProductServiceImpl implements IProductService {
 			
 		}
 		
-		return order;
+		return order.getOrderDetails();
 	}
 
 }

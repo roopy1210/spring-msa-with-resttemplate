@@ -25,7 +25,9 @@ public class PaymentController {
 	public List<Payment> save(HttpServletRequest request, HttpServletResponse response,
 			@RequestBody Order order) throws Exception {
 		
-		return paymentService.save(order);
+		order = paymentService.save(order);
+		
+		return order.getPayments();
 	}
 	
 }

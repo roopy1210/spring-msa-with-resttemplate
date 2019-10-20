@@ -1,14 +1,11 @@
 package com.roopy.services.payment.service.impl;
 
-import java.util.List;
-
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.roopy.services.payment.domain.Order;
-import com.roopy.services.payment.domain.Payment;
 import com.roopy.services.payment.domain.PaymentIdentity;
 import com.roopy.services.payment.helper.IDGeneratorHelper;
 import com.roopy.services.payment.repository.PaymentRepository;
@@ -26,7 +23,7 @@ public class PaymentServiceImpl implements IPaymentService {
 
 	@Transactional
 	@Override
-	public List<Payment> save(Order order) throws Exception {
+	public Order save(Order order) throws Exception {
 		/*결제ID생성*/
 		String paymentId = idGenerator.getPaymentId();
 		
@@ -43,7 +40,7 @@ public class PaymentServiceImpl implements IPaymentService {
 			}
 		}
 		
-		return order.getPayments();
+		return order;
 	}
 
 }

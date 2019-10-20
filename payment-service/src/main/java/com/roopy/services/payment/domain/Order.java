@@ -33,6 +33,10 @@ public class Order implements Serializable {
 	@Column(name = "total_order_amt", nullable = false, length = 20)
 	private Long totalOrderAmt;
 	
+	/*주문사태*/
+	@Column(name = "order_status", nullable = false, length = 1)
+	private String orderStatus;
+	
 	@OneToMany
 	@JoinColumn(name = "order_id", updatable = false)
 	private List<OrderDetail> orderDetails;
@@ -95,6 +99,20 @@ public class Order implements Serializable {
 	 */
 	public void setTotalOrderAmt(Long totalOrderAmt) {
 		this.totalOrderAmt = totalOrderAmt;
+	}
+	
+	/**
+	 * @return the orderStatus
+	 */
+	public String getOrderStatus() {
+		return orderStatus;
+	}
+
+	/**
+	 * @param orderStatus the orderStatus to set
+	 */
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
 	}
 
 	/**
