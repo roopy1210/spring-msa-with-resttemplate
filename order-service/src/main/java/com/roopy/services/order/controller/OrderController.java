@@ -58,16 +58,12 @@ public class OrderController {
 		}
 		
 		/*주문정보저장*/
-		if (productResponse.getStatusCodeValue() == 200) {
+		if (pymentResponse.getStatusCodeValue() == 200 && productResponse.getStatusCodeValue() == 200) {
+			/*결제처리와 상품정보 업데이트가 정상적으로 처리 된 경우 주문상태를 완료로 변경한다.*/
 			order.setOrderStatus("C");
 			order = orderService.save(order);
 			order.setPayments(pymentResponse.getBody());
 		}
-		
-		/*주문정보조회*/
-		System.out.println("#####################################");
-		System.out.println(order.toString());
-		System.out.println("#####################################");
 		
 		return order;
 	}
