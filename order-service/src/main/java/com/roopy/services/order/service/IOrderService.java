@@ -8,4 +8,6 @@ public interface IOrderService {
 	
 	public Order find(String orderId) throws Exception;
 	
+	public Order updateOrderStatus(Order order) throws Exception;
+	
 }
